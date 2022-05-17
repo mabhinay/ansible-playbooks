@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: root
+  become: yes
+  tasks:
+    - name: copy files
+      copy:
+       src: /root/sample.txt
+       dest: /tmp/sample.txt
+    - name: msg display
+      debug:
+       msg: files are copied!
+
